@@ -1,0 +1,39 @@
+---
+title: Sabbatical proposal
+type: html
+---
+
+# Bayesian inference in deep learning
+My goal for the sabbatical is to develop a workshop that teaches Bayesian inference in deep learning models, 
+
+## Deep learning
+Deep learning means models made up of layers. The layers generally have a lot of parameters and may be made of specialized modules like recurrent neural networks for time series data, convolutional neural networks for images, or a BERT encoder for text data. The Python library `torch` is probably the most up-to-date and popular tool for creating  dep learning models, and it contains many standard modules that can often be used without further customization. In cases where there is no standard model that matches an application, it will be necessary to design a custom model by connecting layers that are each made up of some standard modules.
+
+The `torch` library provides optimizers that are pretty much ready-to-go for Torch models. They will optimize some **loss function** that measures the difference between truth and predictions. Examples include the sum of squared errors and the misclassification rate. Users can also create custom loss functions. For example, making log-likelihood the loss function would allow estimating the model by maximum likelihood (ML)
+
+## Bayesian estimation
+In estimating statistical models, the main alternative to ML is Bayesian estimation. The difference between the two is that Bayesian models specify prior distributions for the parameters, which are combined with evidence from the data to get posterior distributions of the parameters that summarize our complete state of knowledge. This procedure has several benefits and drawbacks compared to ML that we don't need to go into right now.
+
+## Bayesian inference in deep learning
+Using Bayesian methods to train deep learning models is an underdeveloped field right now. Ancdotally, it's because mostly computer scientists are interested in deep learning and mostly statisticians are interested in Bayesian methods. In principle there is nothing novel about using Bayesian methods in deep learning models. In practice, however, there are difficulties because deep learning models tend to have huge number of parameters and to use huge amounts of data. Since Bayesian methods are generally slower than ML, it can be impractical to use them in deep learning models.
+
+However, there are cases where Bayesian methods can do things that aren't possible otherwise, and so it would be better to have that tool available for deep learning models. For instance, a Bayesian model can impute missing data in a way that is conceptually simple because specifying a probability distribution for every parameter means that there is a knowable conditional distribution for each term in the model, conditional on the data that was actually observed. Bayesian models also can gracefully handle the case where there is error in the measurement of data.
+
+## Problem statement
+While the concept of estimating a deep learning model using Bayesian methods rather than ML seem simple, the practical implementation is challenging. For the Sageshima startup project, I had to handle missing data in a deep learning model and chose to use Bayesian methods. In that process, I found that the training resources are limited and assume a pretty high level of knowledge before getting started. During my sabbatical I intend to develop a workshop in two parts that will train researchers who want to se deep learning models and Bayesian methods together.
+
+# Plan
+
+My proposal is to create a two-part workshop:
+
+## Part 1: **Introduction to Deep Learning**
+In this part, I introduce the Torch package and walk through a few examples of developing dep learning models for a few types of data (regression, classification, text and/or images)
+
+## Part 2: **Using Bayesian Methods in Deep Learning Models**
+In this part, I introduce a package for Bayesian estimation in Torch (Pyro, NumPyro, or tyxe.) There will be examples with missing data and errors-in-variables.
+
+The target audience will be grad students, post-docs, or faculty who are interested in making use of deep learning models. The theory of deep learning and Bayesian methods will be minimal.
+
+
+
+
