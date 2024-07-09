@@ -91,16 +91,16 @@ Once you've cloned the repo, here's a checklist of things to do to prepare it:
 9. `README.md`: Remove these template instructions, which end at this step, 
    and, if you'd like, `git add` this file and `commit`/`push` it.
 
-# Workshop: WORKSHOP TITLE
+# Workshop: Introduction to Deep Learning
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 _[UC Davis DataLab](https://datalab.ucdavis.edu/)_  
-_QUARTER YEAR_  
+_Fall 2024_  
 _Instructor: YOUR NAME <<YOUR_EMAIL@ucdavis.edu>>_  
-_Maintainer: MAINTAINER'S NAME <<MAINTAINER_EMAIL@ucdavis.edu>>_  
+_Maintainer: Wesley Brooks <<wbrooks@ucdavis.edu>>_  
 
-* [Reader](https://ucdavisdatalab.github.io/YOUR_REPOSITORY/)
+* [Reader](https://ucdavisdatalab.github.io/workshop_deep_learning/)
 * [Event Page](https://datalab.ucdavis.edu/eventscalendar/YOUR_EVENT/)
 
 YOUR DESCRIPTION, LEARNING GOALS, PREREQUISITES, ETC
