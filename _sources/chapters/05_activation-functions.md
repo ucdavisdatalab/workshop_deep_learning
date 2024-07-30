@@ -15,7 +15,22 @@ kernelspec:
 import os
 
 os.chdir("..")
+
+import torch 
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn import datasets
+
+# import the diabetes dataset
+diabetes = datasets.load_diabetes()
+
+# convert the data to a pandas dataframe
+df = pd.DataFrame(diabetes.data, columns=diabetes.feature_names)
+df['target'] = diabetes.target
+
 ```
+
 
 Activation Functions
 ====================
@@ -32,9 +47,8 @@ Activation functions get their name from the Restricted Linear Unit (ReLU) activ
 
 The power of the ReLU activation function is that it introduces conditional statements like "if... then..." into the model. This allows the model to have different behavior depending on its inputs, rather than always giving the same weight to the same column of inputs. In order to make use of the complex conditionality, ReLU activation functions are typically put between linear layers. Here is an example that makes the linear regression model for diabetes progression into a nonlinear dep learning model:
 
-```{code-cell}
-import torch 
 
+```{code-cell}
 # define the torch model
 class NonlinearRegressionModel(torch.nn.Module):
     def __init__(self, input_dim, hidden_dim, output_dim=1):
